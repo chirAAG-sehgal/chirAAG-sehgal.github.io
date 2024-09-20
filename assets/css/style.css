@@ -8,19 +8,18 @@ body, html {
 
 .video-collage {
   display: grid;
+  width: 100%;
+  max-width: 1600px; /* Adjust based on your maximum layout width */
+  margin: 20px auto;
   grid-template-columns: repeat(12, 1fr);
-  gap: 10px;
-  padding: 10px;
-  max-width: 1200px;
-  margin: 40px auto;
+  grid-template-rows: auto;
+  grid-gap: 10px;
 }
 
 .video {
-  overflow: hidden;
-  position: relative;
   background: #000;
-  width: 100%;
-  padding-top: 56.25%; /* default 16:9 aspect ratio, will override per video */
+  position: relative;
+  overflow: hidden;
 }
 
 video {
@@ -29,30 +28,31 @@ video {
   left: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
-/* Aspect Ratio and Grid Placement Adjustments */
-
-/* Large horizontal videos, 27:9 aspect ratio */
-.aspect-27-9 {
-  grid-column: span 12; /* full width */
-  padding-top: 33.33%; /* 9/27 * 100 */
-}
-
-/* Square videos, 1:1 aspect ratio */
+/* Aspect Ratios and dimensions based on your specific sizes */
 .aspect-1-1 {
-  grid-column: span 3; /* spans 3 of 12 columns */
-  padding-top: 100%; /* 1/1 * 100 */
+  grid-column: span 3;
+  height: 896px;
 }
 
-/* Vertical videos, 3:4 aspect ratio */
-.aspect-3-4 {
-  grid-column: span 3; /* spans 3 of 12 columns */
-  padding-top: 133.33%; /* 4/3 * 100 */
-}
-
-/* Standard videos, 4:3 aspect ratio */
 .aspect-4-3 {
-  grid-column: span 3; /* spans 3 of 12 columns */
-  padding-top: 75%; /* 3/4 * 100 */
+  grid-column: span 4;
+  height: 768px;
+}
+
+.aspect-3-4 {
+  grid-column: span 3;
+  height: 1048px;
+}
+
+.aspect-27-9 {
+  grid-column: span 6;
+  height: 640px;
+}
+
+.motionAura {
+  grid-column: 4 / span 6;
+  height: 768px; /* Adjust based on the actual height of the MotionAura video */
 }
