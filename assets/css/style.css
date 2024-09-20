@@ -1,61 +1,61 @@
 /* styles.css */
 
-/* Define the grid container */
-.collage {
+/* Grid container */
+.video-collage {
   display: grid;
-  grid-gap: 10px; /* Adjusts the spacing between videos */
+  grid-gap: 10px;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    "video_wide1 video_center video_wide2"
-    "video_tall1 video_center video_tall2"
-    "video_square1 video_center video_square2"
-    "video_standard1 video_center video_standard2";
+    "video1 motionAura video2"
+    "video3 motionAura video4"
+    "video5 motionAura video6"
+    "video7 motionAura video8";
 }
 
-/* Assign each video to a grid area */
-.video_wide1 { grid-area: video_wide1; }
-.video_wide2 { grid-area: video_wide2; }
-.video_tall1 { grid-area: video_tall1; }
-.video_tall2 { grid-area: video_tall2; }
-.video_square1 { grid-area: video_square1; }
-.video_square2 { grid-area: video_square2; }
-.video_standard1 { grid-area: video_standard1; }
-.video_standard2 { grid-area: video_standard2; }
-.video_center {
-  grid-area: video_center;
-  grid-row: span 4; /* Span across all four rows */
+/* Assign grid areas to video elements */
+.video-collage > .video:nth-of-type(1) { grid-area: video1; }
+.video-collage > .video:nth-of-type(2) { grid-area: video2; }
+.video-collage > .video:nth-of-type(3) { grid-area: video3; }
+.video-collage > .video:nth-of-type(4) { grid-area: video4; }
+.video-collage > .video:nth-of-type(5) { grid-area: video5; }
+.video-collage > .video:nth-of-type(6) { grid-area: video6; }
+.video-collage > .video:nth-of-type(7) { grid-area: video7; }
+.video-collage > .video:nth-of-type(8) { grid-area: video8; }
+.video-collage > .motionAura {
+  grid-area: motionAura;
+  grid-row: span 4; /* Span across all rows */
 }
 
 /* Style for grid items */
-.collage > div {
+.video-collage > div {
   position: relative;
   overflow: hidden;
 }
 
-/* Use padding-top to maintain aspect ratio */
-.video_wide1, .video_wide2 {
-  padding-top: calc(640 / 1536 * 100%); /* Wide videos */
+/* Maintain aspect ratios using padding-top */
+.aspect-27-9 {
+  padding-top: calc(9 / 27 * 100%); /* Aspect ratio 27:9 */
 }
 
-.video_tall1, .video_tall2 {
-  padding-top: calc(1408 / 768 * 100%); /* Tall videos */
+.aspect-4-3 {
+  padding-top: calc(3 / 4 * 100%); /* Aspect ratio 4:3 */
 }
 
-.video_square1, .video_square2 {
-  padding-top: 100%; /* Square videos */
+.aspect-3-4 {
+  padding-top: calc(4 / 3 * 100%); /* Aspect ratio 3:4 */
 }
 
-.video_standard1, .video_standard2 {
-  padding-top: calc(768 / 1024 * 100%); /* Standard videos */
+.aspect-1-1 {
+  padding-top: 100%; /* Aspect ratio 1:1 */
 }
 
-.video_center {
-  padding-top: calc(768 / 1280 * 100%); /* Central video */
+.motionAura {
+  padding-top: calc(768 / 1280 * 100%); /* Adjust to your central video's aspect ratio */
 }
 
 /* Style for video elements */
-.collage video {
+.video-collage video {
   position: absolute;
   top: 0;
   left: 0;

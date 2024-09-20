@@ -21,5 +21,5 @@ title: MOTIONAURA
   <div class="video aspect-4-3"><video src="videos/4-3_2.mp4" controls></video></div>
 
   <!-- MotionAura Central Video -->
-  <div class="video motionAura"><video src="videos/motionaura.mp4" controls></video></div>
+  <div class="motionAura"><video src="videos/motionaura.mp4" controls></video></div>
 </div>
