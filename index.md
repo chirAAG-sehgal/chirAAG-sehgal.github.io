@@ -2,9 +2,12 @@
 layout: default
 title: "MOTIONAURA: Generating High-Quality and Motion Consistent Videos Using Discrete Diffusion"
 ---
-<link rel="stylesheet" href="styles.css">
 
 # {{ page.title }}
+
+<!-- Your video collage HTML code goes here -->
+
+<link rel="stylesheet" href="/styles.css">
 
 <div class="video-collage">
   <!-- 27:9 Videos -->
